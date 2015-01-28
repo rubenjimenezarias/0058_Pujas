@@ -20,7 +20,7 @@ public class Test
         auction.makeABid(2,person2,200);
         
         
-        auction.close();
+        auction.getUnsold();
     }
     
     
