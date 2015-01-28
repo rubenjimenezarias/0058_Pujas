@@ -73,12 +73,12 @@ public class Auction
      * if a lot with this number does not exist.
      * @param lotNumber The number of the lot to return.
      */
-    public Lot getLot(int lotNumber)
+    public Lot getLot(int numberLot)
     {
         Lot selectedLot = null;
         for(Lot lot : lots) 
         {
-            if (lot.getNumber() == lotNumber)
+            if (lot.getNumber() == numberLot)
             {
                 selectedLot = lot;
             }
@@ -125,5 +125,23 @@ public class Auction
             }
         }
         return copia;
+    }
+    /**
+     * Borra el Lot de la arraylist
+     */
+    public Lot removeLot(int lotNumber)
+    {
+        Lot selectedLot = null;
+        int contador = 0;
+        for(Lot lot : lots) 
+        {
+            if (lot.getNumber() == lotNumber)
+            {
+                selectedLot = lot;
+                lots.remove(contador);
+            }
+           contador ++;
+        }
+        return selectedLot;
     }
 }
