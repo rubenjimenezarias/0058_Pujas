@@ -96,4 +96,22 @@ public class Auction
             return null;
         }
     }
+    /**
+     * Metodo que muestra todos los detalles de todos los items que esten subastando.
+     * Muestra nombre y puja.
+     */
+    public void close()
+    {
+        for(Lot lot : lots) 
+        {
+            if (lot.getHighestBid() != null)
+            {
+                System.out.println(lot.toString() + " La apuesta es de " + lot.getHighestBid().getBidder().getName());
+            }
+            else
+            {
+                System.out.println(lot.toString() + "No tiene apuestas");
+            }
+        }
+    }
 }
